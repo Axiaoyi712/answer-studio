@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "checked": "2026-10-21",
+  "sources": [
+    {
+      "id": "banking77",
+      "repo": "PolyAI-LDN/task-specific-datasets",
+      "revision": "57ec275d8078af65b7731c2a98be812d844a6d6b",
+      "files": [
+        {
+          "path": "LICENSE",
+          "local": "LICENSE",
+          "bytes": 18650,
+          "sha256": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+        },
+        {
+          "path": "README.md",
+          "local": "README.md",
+          "bytes": 4735,
+          "sha256": "7b9ce9069931cc2de89dce8c7ffb53d07806cf413601ccf133b9af5227b3a373"
+        },
+        {
+          "path": "banking_data/train.csv",
+          "local": "banking_data__train.csv",
+          "bytes": 839073,
+          "sha256": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b"
+        },
+        {
+          "path": "banking_data/test.csv",
+          "local": "banking_data__test.csv",
+          "bytes": 239961,
+          "sha256": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "attribution": "BANKING77 © PolyAI Limited; Casanueva et al., Efficient Intent Detection with Dual Sentence Encoders, 2020.",
+      "licenseEvidence": "LICENSE",
+      "use": "细分意图和换种问法的检索压力测试；英文银行域，不用于商品事实。",
+      "homepage": "https://github.com/PolyAI-LDN/task-specific-datasets",
+      "licenseUrl": "https://github.com/PolyAI-LDN/task-specific-datasets/blob/57ec275d8078af65b7731c2a98be812d844a6d6b/LICENSE"
+    },
+    {
+      "id": "bitext",
+      "repo": "bitext/customer-support-llm-chatbot-training-dataset",
+      "revision": "72ea2203180d14a416b579c657033ecd21e59a11",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "local": "LICENSE.txt",
+          "bytes": 11238,
+          "sha256": "f6054388eae4947a769ca2020c54e6d394eb01c41d58db55bb6cfd24ce71cdd8"
+        },
+        {
+          "path": "README.md",
+          "local": "README.md",
+          "bytes": 11041,
+          "sha256": "1a9c294106b4d2503a749fdd041b292b4e07e5a4525466d7f215f7b00fbb58d3"
+        },
+        {
+          "path": "data/Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+          "local": "data__Bitext_Sample_Customer_Support_Training_Dataset_27K_responses-v11.csv",
+          "bytes": 19202474,
+          "sha256": "6f81102b0100b97b8468eb04368033a23206bf1fde9d53500d5806ec1001a434"
+        }
+      ],
+      "license": "CDLA-Sharing-1.0",
+      "attribution": "© Bitext Innovations, 2023. Bitext Customer Support LLM Chatbot Training Dataset.",
+      "licenseEvidence": "LICENSE.txt",
+      "use": "客服意图、口语、错别字和否定表达的检索压力测试；合成英文；不用原始 response。",
+      "homepage": "https://github.com/bitext/customer-support-llm-chatbot-training-dataset",
+      "licenseUrl": "https://github.com/bitext/customer-support-llm-chatbot-training-dataset/blob/72ea2203180d14a416b579c657033ecd21e59a11/LICENSE.txt"
+    },
+    {
+      "id": "crosswoz",
+      "repo": "thu-coai/ConvLab-2",
+      "revision": "b014b81fcb1ff74f54681917eee39c14c87af3e5",
+      "files": [
+        {
+          "path": "README.md",
+          "local": "README.md",
+          "bytes": 14474,
+          "sha256": "2083dc14ff14338ff2235e39ec1db7beb0bf801d1376031bec2d98cdef0ef939"
+        },
+        {
+          "path": "data/crosswoz/test.json.zip",
+          "local": "data__crosswoz__test.json.zip",
+          "bytes": 1367456,
+          "sha256": "1703236a9e43089dc48e73abdc9a48a376fd40e2ae6be42cc56aff2a331462ed"
+        },
+        {
+          "path": "data/crosswoz/val.json.zip",
+          "local": "data__crosswoz__val.json.zip",
+          "bytes": 1366330,
+          "sha256": "acc6e3150576c783768cfef4b74841a1fb4d65d1872f77f4029de6985f3a2d1e"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "attribution": "Qi Zhu, Kaili Huang, Zheng Zhang, Xiaoyan Zhu, Minlie Huang. CrossWOZ, 2020; ConvLab-2 corrected annotations, THU-coai / MSR.",
+      "licenseEvidence": "README.md#Supported-Datasets",
+      "use": "中文多轮对话结构、纯问候致谢告别接待；不使用旅游域内容为本站经营事实。",
+      "homepage": "https://github.com/thu-coai/ConvLab-2",
+      "licenseUrl": "https://github.com/thu-coai/ConvLab-2/blob/b014b81fcb1ff74f54681917eee39c14c87af3e5/README.md#Supported-Datasets"
+    },
+    {
+      "id": "drcd",
+      "repo": "DRCKnowledgeTeam/DRCD",
+      "revision": "b944790de5af02c5fbb7cd9cb1473d27d169eebf",
+      "files": [
+        {
+          "path": "README.md",
+          "local": "README.md",
+          "bytes": 6956,
+          "sha256": "df7c740cbe95a8bc7affc8aa0dd01736fc3becf5fe18fb82a7eefe451f3c3520"
+        },
+        {
+          "path": "DRCD_dev.json",
+          "local": "DRCD_dev.json",
+          "bytes": 2184379,
+          "sha256": "e236df03861ba241bd7b29628cd48b3b8e339c60137e041a4358b5320ed61928"
+        }
+      ],
+      "license": "CC-BY-SA-3.0",
+      "attribution": "Delta Research Center / Delta Electronics, Inc. DRCD, compiled and adapted from Wikipedia, 2018.",
+      "licenseEvidence": "README.md#copyright-notice-版權聲明",
+      "use": "繁体中文段落检索与依据问答的开发集探针；不作为本站商品资料。",
+      "homepage": "https://github.com/DRCKnowledgeTeam/DRCD",
+      "licenseUrl": "https://github.com/DRCKnowledgeTeam/DRCD/blob/b944790de5af02c5fbb7cd9cb1473d27d169eebf/README.md#copyright-notice-版權聲明"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>知答 · 通用网页接待演示</title><link rel="stylesheet" href="/web-chat-demo.css"></head><body>
+<header><h1>通用网页接待演示</h1><p>这是本地模拟页面，消息不会发送到小红书、淘宝或真实顾客。启用扩展后会使用所选业务的已发布知识，模型调用按实际用量计费。</p><p>首次使用：扩展 → 添加其他聊天网页 → 下载并导入演示适配文件 → 选择业务 → 先检测页面，再开始接待。</p></header>
+<main id="demo-chat" data-account-id="demo-owner"><aside id="contacts"></aside><section class="conversation"><h2 class="customer-name"></h2><div id="messages" aria-live="polite"></div><label>客服输入框<textarea aria-label="客服输入框" rows="3"></textarea></label><button class="send">发送客服回复</button></section></main>
+<section class="test-tools"><h2>模拟客户发消息</h2><label>客户<select id="customer"><option value="a">演示客户 A</option><option value="b">演示客户 B</option></select></label><label>客户消息<input id="question" value="你好"></label><button id="incoming">模拟客户发送</button><button id="block">模拟当前页面阻断 / 恢复</button><p>可以切换两位客户，或打开另一个演示窗口查看人工回复。阻断解除后需重新打开客服面板。</p></section>
+<div class="demo-blocked" role="dialog" aria-modal="true" hidden><strong>演示：当前页面暂不可用</strong><p>点击“模拟当前页面阻断 / 恢复”解除。本提示不代表真实平台限制。</p></div><script src="/web-chat-demo.js"></script></body></html>

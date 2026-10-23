@@ -1,0 +1,1 @@
+{"name":"product-answer-studio","private":true,"type":"module","scripts":{"start":"node --env-file-if-exists=.env server.mjs","test":"node --test","datasets:prepare":"node scripts/fetch-public-datasets.mjs","datasets:check":"node scripts/check-public-datasets.mjs"},"engines":{"node":">=24"}}

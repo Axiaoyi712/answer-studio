@@ -1,0 +1,16 @@
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {spawnSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+const work=resolve('work/web-channels-browser');mkdirSync(work,{recursive:true});
+const sources=Object.fromEntries(['page-adapters','adapters/xiaohongshu','adapters/dom','auto-policy','inbox-policy','handoff-reasons','page-snapshot','reception','inbox'].map(name=>[name,readFileSync(`edge-extension/${name}.js`,'utf8')]));
+const fixture=readFileSync('scripts/inbox-browser.fixture.js','utf8').split('(async()=>{')[0]+readFileSync('scripts/reception-browser.scenarios.js','utf8').split('(async()=>{')[0]+readFileSync('scripts/web-channels-browser.scenarios.js','utf8');
+const demoProfile=JSON.parse(readFileSync('edge-extension/profiles/web-chat-demo.json','utf8'));
+const file=resolve(work,'fixture.html');writeFileSync(file,`<!doctype html><meta charset="utf-8"><title>跨网页接待验收</title><style>body{font:16px sans-serif;background:#f5f7fa}.xhs-im-input-bar-editor,textarea{height:50px}#demo-chat{max-width:700px}.message{margin:10px}.contact{padding:12px;margin:8px}.send{padding:12px}</style><div id="app"></div><pre id="results">RUNNING</pre><script>const sources=${JSON.stringify(sources).replaceAll('<','\\u003c')},demoProfile=${JSON.stringify(demoProfile)};${fixture}</script>`);
+const edge=process.env.EDGE_BINARY||'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
+const run=spawnSync(edge,['--headless','--disable-gpu','--no-first-run','--no-default-browser-check',`--user-data-dir=${resolve(work,'profile')}`,'--window-size=1440,1000',`--screenshot=${resolve(work,'panel.png')}`,'--virtual-time-budget=180000','--dump-dom',pathToFileURL(file).href],{encoding:'utf8',timeout:60000,maxBuffer:5e6,windowsHide:true});
+if(run.error)throw run.error;writeFileSync(resolve(work,'result.html'),run.stdout||'');
+const match=run.stdout?.match(/<pre id="results">([^<]+)<\/pre>/);assert.ok(match,'Edge 未返回验收结果：'+(run.stderr||'').slice(-1200));
+const result=JSON.parse(match[1].replaceAll('&quot;','"').replaceAll('&amp;','&').replaceAll('&gt;','>').replaceAll('&lt;','<'));
+writeFileSync(resolve(work,'result.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));assert.equal(result.ok,true);

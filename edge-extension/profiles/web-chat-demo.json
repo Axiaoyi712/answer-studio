@@ -1,0 +1,30 @@
+{
+  "id": "web-demo",
+  "name": "通用网页客服演示",
+  "type": "dom",
+  "origin": "http://127.0.0.1:3080",
+  "pathPrefix": "/web-chat-demo/chat",
+  "conversationPath": "/web-chat-demo/chat/{id}",
+  "sendMode": "click",
+  "selectors": {
+    "root": "#demo-chat",
+    "conversation": ".conversation",
+    "rows": ".contact",
+    "messages": ".message",
+    "text": ".message-text",
+    "incoming": ".incoming",
+    "outgoing": ".outgoing",
+    "input": "textarea",
+    "send": ".send",
+    "blocked": ".demo-blocked:not([hidden])",
+    "name": ".customer-name"
+  },
+  "attributes": {
+    "account": "data-account-id",
+    "conversation": "data-conversation-id",
+    "row": "data-contact-id",
+    "message": "data-message-id",
+    "unread": "data-unread",
+    "time": "data-time"
+  }
+}

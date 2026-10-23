@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "知答 · 网页智能客服",
+  "version": "0.11.0",
+  "description": "产品知识客服：连续自动接待、人工接管与恢复、发送防重，保留检测和草稿模式。",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "notifications",
+    "alarms"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "https://www.xiaohongshu.com/*"
+  ],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.xiaohongshu.com/*"
+      ],
+      "js": [
+        "bootstrap.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

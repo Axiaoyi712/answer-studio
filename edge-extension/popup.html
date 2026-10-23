@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>知答回复助手</title><link rel="stylesheet" href="popup.css"></head><body>
+<h1>知答 · 智能客服</h1>
+<p>打开要接待的聊天网页，选择对应适配和业务。每个网页适配使用独立的接待标签页。</p>
+<details><summary>连接设置（首次填写）</summary><label>本地连接令牌<input id="token" type="password" autocomplete="off" placeholder="不是 DeepSeek 密钥"></label><button id="connect">保存并连接</button><p>令牌见项目 data/edge-bridge-token.txt。保存在此浏览器本机，重启后无需重填；请勿在共享浏览器配置中使用。</p></details>
+<label>已发布业务<select id="space"></select></label>
+<label>网页适配<select id="profile"></select></label>
+<details><summary>添加其他聊天网页（配置一次）</summary><p>导入适配文件后会自动读取账号和顾客信息，无需逐个填写。网页结构不同，需要各自适配；不会仅凭网址认定淘宝等平台已支持。</p><label>导入网页适配文件<input id="profile-file" type="file" accept=".json,application/json"></label><a href="profiles/web-chat-demo.json" download>下载本地演示适配文件</a><p>本地演示地址：http://127.0.0.1:3080/web-chat-demo/chat/a</p></details>
+<p id="service">检查本地服务后显示连接状态。</p>
+<button id="auto">检查并开始接待</button><div id="status" role="status"></div>
+<button id="inspect">仅打开面板，先检测页面</button>
+<p>控制台提供“开始日常接待”，可连续处理当前及其他未读私信；首次使用可先检测、生成草稿或验证单条发送。</p>
+<script src="popup.js"></script></body></html>
